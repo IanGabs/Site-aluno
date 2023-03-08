@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1> Lista alunos: </h1>
+    <input type="text" name="" id="texto-aluno">
+    <button id="btn-adicionar"> Adicionar </button>
+    <ul id="Lista-Alunos">
+        <li style="margin-bottom: 10px;">
+            <span class="texto-lucas">Lucas</span> <button id="btn-lucas"> Remover </button>
+        </li> 
+        <li style="margin-bottom: 10px;">
+            <span class="texto-matheus">Matheus</span> <button id="btn-matheus"> Remover </button>
+        </li> 
+        <li style="margin-bottom: 10px;">
+            <span class="texto-felipe">Felipe</span> <button id="btn-felipe"> Remover </button>
+        </li> 
+    </ul>
+    <button id="btn-remover"> Remover alunos </button>
+    <button id="btn-recolocar"> Recolocar alunos </button>
+
+    <script>
+        let alunos = [
+    "Lucas", "Matheus", "Felipe"
+    ];
+
+    const inputAluno = document.querySelector ("#texto-aluno")
+    const btnRemover = document.querySelector("#btn-remover")
+    const btnRecolocar = document.querySelector("#btn-recolocar")
+    const btnRemoverLucas = document.querySelector("#btn-remover-Lucas")
+    const btnLucas = document.querySelector("#btn-lucas")
+    const btnMatheus = document.querySelector("#btn-matheus")
+    const btnFelipe = document.querySelector("#btn-felipe")
+    const btnAdicionar = document.querySelector("btn-adicionar")
+
+    btnRemover.addEventListener("click", removerAlunos)
+    btnRecolocar.addEventListener("click", recolocarAlunos)
+    btnLucas.addEventListener("click", removerLucas)
+    btnMatheus.addEventListener("click", removerMatheus)
+    btnFelipe.addEventListener("click", removerFelipe)
+    btnAdicionar.addEventListener("click", adicionarAluno)
+
+     function removerAlunos() {
+         const lista = document.querySelector("#Lista-Alunos");
+         lista.innerHTML = "";
+     }
+
+     function recolocarAlunos() {
+        const lista = document.querySelector("#Lista-Alunos");
+        let html = null;
+        alunos.forEach(aluno => {
+            const item = document.createElement("li");
+            item.innerHTML = aluno;
+            lista.appendChild(item)
+        });
+     }
+
+     function removerLucas() {
+        const lista = document.querySelector(".texto-lucas");
+        lista.innerHTML = "";
+     }
+
+     function removerMatheus() {
+        const lista = document.querySelector(".texto-matheus");
+        lista.innerHTML = "";
+     }
+
+     function removerFelipe() {
+        const lista = document.querySelector(".texto-felipe");
+        lista.innerHTML = "";
+     }
+    
+     
+
+    </script>
+</body>
+</html>
